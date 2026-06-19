@@ -1,0 +1,36 @@
+/* ============================================================
+   DESIGN TOKENS
+   ── Change colors, fonts, and animation speeds here. ──
+   These variables are used everywhere: both in component
+   classes below and in the Tailwind config in index.html.
+   ============================================================ */
+
+:root {
+  /* ── Brand (purple) palette ─────────────────────────────── */
+  --brand-50:  #f5f3ff;
+  --brand-100: #ede9fe;
+  --brand-200: #ddd6fe;
+  --brand-300: #c4b5fd;
+  --brand-400: #a78bfa;   /* ← accent highlights, icons */
+  --brand-500: #8b5cf6;   /* ← primary brand color */
+  --brand-600: #7c3aed;   /* ← buttons, active states */
+  --brand-700: #6d28d9;   /* ← button gradients */
+  --brand-800: #5b21b6;
+  --brand-900: #1e1b4b;   /* ← deep backgrounds */
+
+  /* ── Surface / background palette ──────────────────────── */
+  --surface-base:   #09090f;  /* ← page background */
+  --surface-card:   #0f0e1a;  /* ← card backgrounds */
+  --surface-raised: #141328;  /* ← elevated cards */
+  --surface-border: #2a2750;  /* ← subtle borders */
+
+  /* ── Typography ─────────────────────────────────────────── */
+  --font-sans:    'Inter', system-ui, sans-serif;
+  --font-display: 'Space Grotesk', 'Inter', sans-serif;
+
+  /* ── Animation speeds ───────────────────────────────────── */
+  --duration-scan:   3s;
+  --duration-float:  6s;
+  --duration-glow:   2s;
+  --duration-lipsync: 0.8s;
+}
