@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Tenkir AI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/tokens.css"/>
+  <link rel="stylesheet" href="css/animations.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body class="pt-24 pb-20 px-4 sm:px-6 lg:px-8">
+  <div class="ambient-glow ambient-glow-2"></div>
+  <div class="max-w-3xl mx-auto relative z-10 glass p-8 md:p-12 rounded-2xl glow-border">
+    <a href="index.html" class="text-brand-400 hover:text-brand-300 transition-colors text-sm font-semibold mb-6 inline-block">&larr; Back to Home</a>
+    <h1 class="font-display font-bold text-white text-3xl md:text-4xl mb-8">Privacy Policy</h1>
+    
+    <div class="space-y-6 text-slate-400 text-sm leading-relaxed">
+      <p>Last Updated: October 2023</p>
+      
+      <h2 class="text-white font-semibold text-lg mt-8 mb-4">1. Information We Collect</h2>
+      <p>We collect information you provide directly to us when you use our services. Because Tenkir AI is an interactive conversational agent, we specifically collect:</p>
+      <ul class="list-disc pl-5 space-y-2 text-slate-400">
+        <li><strong>Microphone Audio Data:</strong> When you participate in an interview, we request access to your microphone. Your voice data is processed locally via the Web Audio API for lip-syncing and transmitted securely to our backend for real-time transcription.</li>
+        <li><strong>Interview Transcripts:</strong> The text generated from your speech using `webkitSpeechRecognition` is stored and analyzed by our AI evaluation engine.</li>
+        <li><strong>Professional Information:</strong> The CV, resume, or profile data you upload is parsed by our AI to tailor the interview questions dynamically.</li>
+      </ul>
+
+      <h2 class="text-white font-semibold text-lg mt-8 mb-4">2. How We Process and Use Your Information</h2>
+      <p>We use the information we collect to operate the Tenkir AI platform and deliver automated technical screening to hiring managers. Specifically:</p>
+      <ul class="list-disc pl-5 space-y-2 text-slate-400">
+        <li>Your audio streams are processed with ultra-low latency to enable real-time conversational interactions with the 3D Avatar.</li>
+        <li>Your 16-turn conversation transcript is analyzed by a Large Language Model to generate an automated technical depth score, behavioral assessment, and overall recommendation.</li>
+        <li>The generated scorecard and full transcript are automatically emailed to the authorized recruiter or hiring manager upon completion of the interview.</li>
+      </ul>
+
+      <h2 class="text-white font-semibold text-lg mt-8 mb-4">3. Data Retention and Security</h2>
+      <p>We implement enterprise-grade security measures to protect your personal data. Transcripts and AI-generated scorecards are securely stored in our Supabase database. Raw audio streams are processed in memory for transcription and lip-sync mapping and are not persistently stored unless explicitly requested by the hiring organization for compliance purposes. We are SOC 2 Type II compliant.</p>
+
+      <h2 class="text-white font-semibold text-lg mt-8 mb-4">4. Sharing of Information</h2>
+      <p>Your interview data, including your parsed CV, live transcripts, and the final AI-generated scorecard, is shared <strong>only</strong> with the specific enterprise customer (the employer) to whose job posting you applied. We do not sell your personal data to third parties, nor do we use your interview data to train base foundational AI models.</p>
+
+      <h2 class="text-white font-semibold text-lg mt-8 mb-4">5. Your Rights</h2>
+      <p>Depending on your jurisdiction (such as under GDPR or CCPA), you may have the right to request access to, correction of, or deletion of the data we hold about you. Please note that once a scorecard is emailed to an employer, they become the Data Controller of that specific report, and deletion requests must also be directed to them.</p>
+    </div>
+  </div>
+</body>
+</html>

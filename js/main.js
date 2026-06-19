@@ -9,6 +9,14 @@ var APP_URL = {
   signUp:  'http://localhost:3000/signup',
 };
 
+// ── Supabase Configuration ────────────────────────────────────
+let supabaseClient = null;
+if (window.supabase) {
+  const supabaseUrl = 'https://ganfmihjqgadexmlleio.supabase.co';
+  const supabaseKey = 'sb_publishable_O3RFdjxDq5oIy18VCI5_Sw_IPgcdc-w';
+  supabaseClient = window.supabase.createClient(supabaseUrl, supabaseKey);
+}
+
 // ── Mobile Menu ───────────────────────────────────────────────
 function toggleMobileMenu() {
   var menu = document.getElementById('mobile-menu');
@@ -23,7 +31,7 @@ function toggleMobileMenu() {
 // ── CTA Handlers ──────────────────────────────────────────────
 function handleBookDemo()  { window.openModal && window.openModal(); }
 
-function handleEmailSubmit() {
+async function handleEmailSubmit() {
   var input = document.getElementById('email-input');
   var confirmation = document.getElementById('submit-confirmation');
   if (!input) return;
@@ -34,10 +42,25 @@ function handleEmailSubmit() {
     return;
   }
 
-  var savedEmails = JSON.parse(localStorage.getItem('tenkir_waitlist') || '[]');
-  if (!savedEmails.includes(email)) {
-    savedEmails.push({ email: email, date: new Date().toISOString() });
-    localStorage.setItem('tenkir_waitlist', JSON.stringify(savedEmails));
+  if (supabaseClient) {
+    const { error } = await supabaseClient
+      .from('waitlist')
+      .insert([{ email: email }]);
+      
+    if (error) {
+      console.error('Supabase error (falling back to local storage):', error.message);
+      var savedEmails = JSON.parse(localStorage.getItem('tenkir_waitlist') || '[]');
+      if (!savedEmails.some(e => e.email === email)) {
+        savedEmails.push({ email: email, date: new Date().toISOString() });
+        localStorage.setItem('tenkir_waitlist', JSON.stringify(savedEmails));
+      }
+    }
+  } else {
+    var savedEmails = JSON.parse(localStorage.getItem('tenkir_waitlist') || '[]');
+    if (!savedEmails.some(e => e.email === email)) {
+      savedEmails.push({ email: email, date: new Date().toISOString() });
+      localStorage.setItem('tenkir_waitlist', JSON.stringify(savedEmails));
+    }
   }
 
   input.value = '';

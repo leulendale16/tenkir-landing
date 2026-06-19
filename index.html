@@ -12,7 +12,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   
-  
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 
@@ -108,7 +109,7 @@
 
         <!-- Subheadline -->
         <p class="text-slate-400 text-lg leading-relaxed max-w-xl">
-          Tenkir AI deploys conversational 3D avatars that read your candidates' CVs, conduct personalized technical interviews with real-time lip-sync, and deliver instant AI-scored HR reports — automatically.
+          Tenkir AI is an advanced hiring platform powered by WebGL and React Three Fiber. It places candidates in an immersive 3D office environment and conducts dynamic, 16-turn technical interviews using real-time speech recognition, live Web Audio API lip-syncing, and streaming LLM responses.
         </p>
 
         <!-- Feature micro-list -->
@@ -319,46 +320,39 @@
             </div>
             <div>
               <span class="tag px-2 py-0.5 rounded-md text-xs mb-2 inline-block">Signature Feature</span>
-              <h3 class="font-display font-semibold text-white text-lg">Hyper-Realistic 3D Avatars</h3>
+              <h3 class="font-display font-semibold text-white text-lg">Immersive React Three Fiber Environments</h3>
             </div>
           </div>
-          <p class="text-slate-400 text-sm leading-relaxed mb-6">Powered by ARKit blendshapes with 52 facial muscle targets, our avatars achieve perfect phoneme-accurate lip-sync, natural eye movement, and micro-expression generation. Candidates consistently report they forgot they were talking to an AI.</p>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6">Candidates enter a meticulously designed 3D corporate office built with WebGL and React Three Fiber. Complete with dynamic corporate lighting, moving ceiling fans, and detailed environmental assets, the platform establishes immediate professional presence. The avatar utilizes an Audio AnalyserNode to map streaming audio frequencies to facial blendshapes for zero-latency lip-syncing.</p>
           <!-- Mini visual -->
           <div class="flex items-center gap-3 mt-auto pt-4 border-t border-white/5">
             <div class="flex gap-2">
-              <div class="px-3 py-1.5 rounded-lg text-xs text-slate-400" style="background: rgba(42,39,80,0.5); border: 1px solid rgba(42,39,80,0.8);">ARKit Blendshapes</div>
-              <div class="px-3 py-1.5 rounded-lg text-xs text-slate-400" style="background: rgba(42,39,80,0.5); border: 1px solid rgba(42,39,80,0.8);">52 Facial Targets</div>
-              <div class="px-3 py-1.5 rounded-lg text-xs text-slate-400 hidden sm:block" style="background: rgba(42,39,80,0.5); border: 1px solid rgba(42,39,80,0.8);">Real-Time Sync</div>
+              <div class="px-3 py-1.5 rounded-lg text-xs text-slate-400" style="background: rgba(42,39,80,0.5); border: 1px solid rgba(42,39,80,0.8);">React Three Fiber</div>
+              <div class="px-3 py-1.5 rounded-lg text-xs text-slate-400" style="background: rgba(42,39,80,0.5); border: 1px solid rgba(42,39,80,0.8);">Web Audio API Sync</div>
+              <div class="px-3 py-1.5 rounded-lg text-xs text-slate-400 hidden sm:block" style="background: rgba(42,39,80,0.5); border: 1px solid rgba(42,39,80,0.8);">Dynamic Lighting</div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Feature 2: CV-Driven -->
+      <!-- Feature 2: Real-time Audio -->
       <div class="bento-card glow-border rounded-2xl p-6" style="background: linear-gradient(145deg, #141328, #0f0e1a);">
         <div class="icon-wrap w-12 h-12 rounded-xl flex items-center justify-center mb-4">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.8">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
           </svg>
         </div>
-        <h3 class="font-display font-semibold text-white text-lg mb-2">Dynamic CV-Driven Assessments</h3>
-        <p class="text-slate-400 text-sm leading-relaxed">Every interview is unique. Tenkir parses the candidate's CV in real-time, extracting skills, projects, and tenure — then builds a bespoke question tree with role-specific technical probes and behavioral rubrics calibrated to their exact background.</p>
+        <h3 class="font-display font-semibold text-white text-lg mb-2">Live Speech Recognition</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Interviews are fully conversational. We utilize advanced `webkitSpeechRecognition` to stream user audio directly into text, parsing partial transcripts on the fly. A built-in 2-minute timer ensures candidates stay concise, automatically submitting their response when time is up or silence is detected.</p>
         <div class="mt-4 pt-4 border-t border-white/5">
-          <div class="text-xs text-slate-500 mb-2">Question types generated</div>
+          <div class="text-xs text-slate-500 mb-2">Streaming Audio Chunks Processed</div>
           <div class="space-y-1.5">
             <div class="flex items-center justify-between text-xs">
-              <span class="text-slate-400">Technical depth</span>
-              <span class="text-brand-400">68%</span>
+              <span class="text-slate-400">Latency Overhead</span>
+              <span class="text-brand-400">&lt;200ms</span>
             </div>
             <div class="h-1.5 rounded-full bg-slate-800">
-              <div class="h-full rounded-full bg-gradient-to-r from-brand-700 to-brand-400" style="width:68%"></div>
-            </div>
-            <div class="flex items-center justify-between text-xs">
-              <span class="text-slate-400">Behavioral STAR</span>
-              <span class="text-brand-400">32%</span>
-            </div>
-            <div class="h-1.5 rounded-full bg-slate-800">
-              <div class="h-full rounded-full from-brand-700 to-brand-400" style="width:32%; background: linear-gradient(90deg, #7c3aed, #a78bfa)"></div>
+              <div class="h-full rounded-full bg-gradient-to-r from-brand-700 to-brand-400" style="width:15%"></div>
             </div>
           </div>
         </div>
@@ -383,38 +377,37 @@
         </div>
       </div>
 
-      <!-- Feature 4: Proctoring — Wide -->
+      <!-- Feature 4: Automated Evaluation -->
       <div class="bento-card glow-border rounded-2xl p-6 lg:col-span-2" style="background: linear-gradient(145deg, #141328, #0f0e1a);">
         <div class="flex flex-col sm:flex-row gap-6">
           <div class="flex-1">
             <div class="icon-wrap w-12 h-12 rounded-xl flex items-center justify-center mb-4">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.8">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
               </svg>
             </div>
-            <h3 class="font-display font-semibold text-white text-lg mb-2">Live Proctoring & Anti-Cheating</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">Multi-layer integrity enforcement: tab-switch detection, passive gaze-direction analysis, AI-assistance signature detection via response latency and phrasing patterns, and live session flagging with timestamped evidence for HR review.</p>
+            <h3 class="font-display font-semibold text-white text-lg mb-2">Automated Evaluation Engine</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">Once the 16-turn conversation completes, our `/api/evaluate` endpoint takes over. The entire conversation history is analyzed against the candidate's CV and the job description. Within seconds, a comprehensive scorecard is generated and automatically emailed to the hiring manager via Resend.</p>
           </div>
           <div class="flex-shrink-0 sm:w-44">
             <div class="rounded-xl p-3 h-full flex flex-col gap-2 justify-center" style="background: rgba(9,9,15,0.6); border: 1px solid rgba(42,39,80,0.6);">
-              <div class="text-xs text-slate-500 mb-1 font-medium">Integrity Signals</div>
+              <div class="text-xs text-slate-500 mb-1 font-medium">Evaluation Pipeline</div>
               <div class="space-y-2">
                 <div class="flex items-center gap-2">
                   <span class="w-2 h-2 rounded-full bg-green-500 flex-shrink-0"></span>
-                  <span class="text-xs text-slate-400">Gaze on-screen</span>
+                  <span class="text-xs text-slate-400">Context Extraction</span>
                 </div>
                 <div class="flex items-center gap-2">
                   <span class="w-2 h-2 rounded-full bg-green-500 flex-shrink-0"></span>
-                  <span class="text-xs text-slate-400">Single tab active</span>
+                  <span class="text-xs text-slate-400">Technical Scoring</span>
                 </div>
                 <div class="flex items-center gap-2">
                   <span class="w-2 h-2 rounded-full bg-yellow-500 flex-shrink-0 animate-pulse"></span>
-                  <span class="text-xs text-slate-400">Response velocity</span>
+                  <span class="text-xs text-slate-400">Report Generation</span>
                 </div>
                 <div class="flex items-center gap-2">
-                  <span class="w-2 h-2 rounded-full bg-green-500 flex-shrink-0"></span>
-                  <span class="text-xs text-slate-400">AI sig. not found</span>
+                  <span class="w-2 h-2 rounded-full bg-blue-500 flex-shrink-0"></span>
+                  <span class="text-xs text-slate-400">SMTP Delivery</span>
                 </div>
               </div>
             </div>
@@ -547,8 +540,199 @@
 
 
 <!-- ============================================================
-     EARLY ACCESS
+     THE 16-TURN FRAMEWORK
      ============================================================ -->
+<section class="relative z-10 py-20 px-4 sm:px-6 lg:px-8 bg-[#0a0914]">
+  <div class="gradient-divider mb-20"></div>
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="section-label mb-4">The Interview Structure</p>
+      <h2 class="font-display font-bold text-white mb-4" style="font-size: clamp(1.8rem, 3.5vw, 2.8rem); line-height: 1.15;">
+        The 16-Turn <span class="gradient-text">Framework.</span>
+      </h2>
+      <p class="text-slate-400 max-w-2xl mx-auto">Every interview is capped at 16 conversational turns, ensuring a highly focused, perfectly timed assessment that respects the candidate's time while extracting maximum technical signal.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <!-- Phase 1 -->
+      <div class="relative glass rounded-2xl p-6 border-t border-brand-500/30 glow-border hover:-translate-y-1 transition-transform">
+        <div class="text-brand-400 font-bold mb-2">Turns 1-3</div>
+        <h3 class="text-white font-semibold text-lg mb-3">Context & Calibration</h3>
+        <p class="text-slate-400 text-sm">The avatar welcomes the candidate, verifies their audio setup, and asks an ice-breaker based on their most recent CV role to establish a comfortable baseline.</p>
+      </div>
+      <!-- Phase 2 -->
+      <div class="relative glass rounded-2xl p-6 border-t border-blue-500/30 glow-border hover:-translate-y-1 transition-transform">
+        <div class="text-blue-400 font-bold mb-2">Turns 4-10</div>
+        <h3 class="text-white font-semibold text-lg mb-3">Technical Deep Dive</h3>
+        <p class="text-slate-400 text-sm">The LLM dynamically generates complex, multi-part technical architecture questions. It listens to the candidate's response and actively probes weak points.</p>
+      </div>
+      <!-- Phase 3 -->
+      <div class="relative glass rounded-2xl p-6 border-t border-amber-500/30 glow-border hover:-translate-y-1 transition-transform">
+        <div class="text-amber-400 font-bold mb-2">Turns 11-14</div>
+        <h3 class="text-white font-semibold text-lg mb-3">Behavioral STAR</h3>
+        <p class="text-slate-400 text-sm">Shifting to soft skills, the AI asks situational questions (Situation, Task, Action, Result) to evaluate leadership, conflict resolution, and teamwork.</p>
+      </div>
+      <!-- Phase 4 -->
+      <div class="relative glass rounded-2xl p-6 border-t border-green-500/30 glow-border hover:-translate-y-1 transition-transform">
+        <div class="text-green-400 font-bold mb-2">Turns 15-16</div>
+        <h3 class="text-white font-semibold text-lg mb-3">Conclusion & Scoring</h3>
+        <p class="text-slate-400 text-sm">The candidate asks any final questions about the role. The session gracefully closes, and the `/api/evaluate` endpoint immediately fires the scorecard.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DEEP TECH ARCHITECTURE
+     ============================================================ -->
+<section class="relative z-10 py-24 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <p class="section-label mb-4">Built For Scale</p>
+        <h2 class="font-display font-bold text-white mb-6" style="font-size: clamp(1.8rem, 3.5vw, 2.8rem); line-height: 1.15;">
+          Enterprise-Grade <span class="gradient-text">Architecture.</span>
+        </h2>
+        <p class="text-slate-400 mb-8 leading-relaxed">
+          Tenkir AI isn't just a wrapper—it's a massive orchestration of real-time technologies. We process audio chunks, map facial blendshapes, and stream LLM tokens simultaneously in the browser to achieve sub-200ms perceived latency.
+        </p>
+        
+        <div class="space-y-6">
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-lg bg-brand-900/30 border border-brand-500/30 flex items-center justify-center flex-shrink-0 text-brand-400">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            </div>
+            <div>
+              <h4 class="text-white font-semibold mb-1">React Three Fiber & WebGL</h4>
+              <p class="text-slate-400 text-sm">Hardware-accelerated 3D rendering creates a pristine corporate office environment directly in the browser, with dynamic lighting and shadow casting.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-lg bg-brand-900/30 border border-brand-500/30 flex items-center justify-center flex-shrink-0 text-brand-400">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+            </div>
+            <div>
+              <h4 class="text-white font-semibold mb-1">Web Audio API & ARKit</h4>
+              <p class="text-slate-400 text-sm">An Audio AnalyserNode maps raw streaming voice frequencies to 52 precise ARKit facial blendshapes for flawless, procedural lip-syncing without pre-rendering.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-lg bg-brand-900/30 border border-brand-500/30 flex items-center justify-center flex-shrink-0 text-brand-400">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            </div>
+            <div>
+              <h4 class="text-white font-semibold mb-1">Next.js & Supabase</h4>
+              <p class="text-slate-400 text-sm">A serverless backend architecture utilizing Next.js API routes ensures infinite scalability, backed by Supabase for strict Row-Level Security (RLS) on all candidate data.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Visual Code Block -->
+      <div class="rounded-2xl p-6 bg-[#09090f] border border-white/10 glow-border shadow-2xl relative overflow-hidden group">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-500 to-blue-500 opacity-50 group-hover:opacity-100 transition-opacity"></div>
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+          <div class="w-3 h-3 rounded-full bg-amber-500/80"></div>
+          <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+          <span class="text-xs text-slate-500 ml-2 font-mono">app/api/evaluate/route.ts</span>
+        </div>
+        <pre class="text-xs text-brand-200 font-mono overflow-x-auto leading-relaxed"><code><span class="text-slate-500">// 1. Analyze 16-turn transcript</span>
+const scorecard = await llm.evaluate({
+  resume: candidate.cvText,
+  transcript: session.messages,
+  rubric: role.technicalRubric
+});
+
+<span class="text-slate-500">// 2. Save securely to Supabase</span>
+await supabase.from('evaluations').insert({
+  candidate_id: candidate.id,
+  score: scorecard.overallScore,
+  technical_depth: scorecard.techDepth
+});
+
+<span class="text-slate-500">// 3. Dispatch HR Email via Resend</span>
+await resend.emails.send({
+  to: recruiter.email,
+  subject: `Tenkir Evaluation: ${candidate.name}`,
+  react: ScorecardTemplate({ scorecard })
+});</code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DUAL VALUE PROPOSITION
+     ============================================================ -->
+<section class="relative z-10 py-20 px-4 sm:px-6 lg:px-8 bg-[#141328]/30">
+  <div class="gradient-divider mb-16"></div>
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="font-display font-bold text-white mb-4" style="font-size: clamp(1.8rem, 3.5vw, 2.8rem); line-height: 1.15;">
+        A Win-Win for <span class="gradient-text">Everyone.</span>
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- For Candidates -->
+      <div class="glass p-8 rounded-2xl border-l-4 border-brand-500">
+        <h3 class="text-2xl font-bold text-white mb-6">Why Candidates Love It</h3>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <span class="text-brand-400 mt-1">✦</span>
+            <div>
+              <strong class="text-white block mb-0.5">Zero Scheduling Stress</strong>
+              <span class="text-slate-400 text-sm">Take the interview at 2 AM on a Sunday. No back-and-forth emails finding calendar overlaps.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-brand-400 mt-1">✦</span>
+            <div>
+              <strong class="text-white block mb-0.5">Completely Unbiased</strong>
+              <span class="text-slate-400 text-sm">Graded purely on technical merit and structured rubrics, free from human fatigue or affinity bias.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-brand-400 mt-1">✦</span>
+            <div>
+              <strong class="text-white block mb-0.5">Highly Engaging</strong>
+              <span class="text-slate-400 text-sm">A stunning 3D environment makes the process feel incredibly premium compared to a cold web form.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- For Employers -->
+      <div class="glass p-8 rounded-2xl border-l-4 border-blue-500">
+        <h3 class="text-2xl font-bold text-white mb-6">Why Employers Love It</h3>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <span class="text-blue-400 mt-1">✦</span>
+            <div>
+              <strong class="text-white block mb-0.5">10x Screening Throughput</strong>
+              <span class="text-slate-400 text-sm">Screen 1,000 candidates simultaneously without taking a single minute of engineering time.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-blue-400 mt-1">✦</span>
+            <div>
+              <strong class="text-white block mb-0.5">Standardized Baselines</strong>
+              <span class="text-slate-400 text-sm">Every candidate faces the exact same difficulty curve and grading strictness, ensuring fair comparisons.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-blue-400 mt-1">✦</span>
+            <div>
+              <strong class="text-white block mb-0.5">Instant Actionable Data</strong>
+              <span class="text-slate-400 text-sm">Receive a rich scorecard with technical depth ratings and transcript highlights delivered straight to your inbox.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 <section id="early-access" class="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
   <div class="gradient-divider mb-20"></div>
   <div class="max-w-7xl mx-auto">
@@ -630,8 +814,8 @@
           <li><a href="#" class="text-slate-500 text-sm hover:text-brand-400 transition-colors">About</a></li>
           <li><a href="#" class="text-slate-500 text-sm hover:text-brand-400 transition-colors">Blog</a></li>
           <li><a href="#" class="text-slate-500 text-sm hover:text-brand-400 transition-colors">Careers</a></li>
-          <li><a href="#" class="text-slate-500 text-sm hover:text-brand-400 transition-colors">Privacy Policy</a></li>
-          <li><a href="#" class="text-slate-500 text-sm hover:text-brand-400 transition-colors">Terms of Service</a></li>
+          <li><a href="privacy.html" class="text-slate-500 text-sm hover:text-brand-400 transition-colors">Privacy Policy</a></li>
+          <li><a href="terms.html" class="text-slate-500 text-sm hover:text-brand-400 transition-colors">Terms of Service</a></li>
           <li><a href="#" class="text-slate-500 text-sm hover:text-brand-400 transition-colors">Security</a></li>
         </ul>
       </div>
@@ -646,8 +830,8 @@
         <a href="#" class="text-brand-500 hover:text-brand-400 transition-colors font-medium"> Leul Endale</a>.
       </p>
       <div class="flex items-center gap-4">
-        <a href="#" class="text-slate-600 hover:text-brand-400 transition-colors text-xs">Privacy</a>
-        <a href="#" class="text-slate-600 hover:text-brand-400 transition-colors text-xs">Terms</a>
+        <a href="privacy.html" class="text-slate-600 hover:text-brand-400 transition-colors text-xs">Privacy</a>
+        <a href="terms.html" class="text-slate-600 hover:text-brand-400 transition-colors text-xs">Terms</a>
         <a href="#" class="text-slate-600 hover:text-brand-400 transition-colors text-xs">Status</a>
       </div>
     </div>
