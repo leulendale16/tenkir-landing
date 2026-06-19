@@ -47,12 +47,10 @@
         <a href="#features" class="nav-link">Features</a>
         <a href="#integrations" class="nav-link">ATS Integrations</a>
         <a href="#how-it-works" class="nav-link">How It Works</a>
-        <a href="#pricing" class="nav-link">Pricing</a>
       </div>
 
       <!-- CTA -->
       <div class="hidden md:flex items-center gap-3">
-        <button class="nav-link px-4 py-2 rounded-lg" onclick="handleSignIn()">Sign In</button>
         <button class="btn-primary px-5 py-2 rounded-lg text-sm" onclick="handleBookDemo()">
           Book a Demo
         </button>
@@ -73,9 +71,7 @@
       <a href="#features" class="block nav-link py-2" onclick="toggleMobileMenu()">Features</a>
       <a href="#integrations" class="block nav-link py-2" onclick="toggleMobileMenu()">ATS Integrations</a>
       <a href="#how-it-works" class="block nav-link py-2" onclick="toggleMobileMenu()">How It Works</a>
-      <a href="#pricing" class="block nav-link py-2" onclick="toggleMobileMenu()">Pricing</a>
       <div class="pt-3 space-y-2 border-t border-white/5">
-        <button class="w-full btn-secondary py-2.5 px-4 rounded-lg text-sm" onclick="handleSignIn()">Sign In</button>
         <button class="w-full btn-primary py-2.5 px-4 rounded-lg text-sm" onclick="handleBookDemo()">Book a Demo</button>
       </div>
     </div>
@@ -130,19 +126,11 @@
 
         <!-- CTAs -->
         <div class="flex flex-wrap gap-4">
-          <button class="btn-primary px-7 py-3.5 rounded-xl text-base flex items-center gap-2" onclick="handleFreeTrial()">
+          <button class="btn-primary px-7 py-3.5 rounded-xl text-base flex items-center gap-2" onclick="handleBookDemo()">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
             </svg>
-            Start Free Trial
-          </button>
-          <button class="btn-secondary px-7 py-3.5 rounded-xl text-base flex items-center gap-2" onclick="handleWatchDemo()">
-            <span class="w-8 h-8 rounded-full flex items-center justify-center" style="background: rgba(139,92,246,0.2); border: 1px solid rgba(139,92,246,0.4);">
-              <svg width="10" height="12" viewBox="0 0 10 12" fill="#a78bfa">
-                <polygon points="0,0 10,6 0,12"/>
-              </svg>
-            </span>
-            Watch Interactive Demo
+            Book a Demo
           </button>
         </div>
 
@@ -244,7 +232,6 @@
             <div class="text-xs text-slate-500 mb-1">Tech Depth</div>
             <div class="text-lg font-display font-bold text-white">8.7<span class="text-brand-400">/10</span></div>
             <div class="flex gap-1 mt-1.5">
-              {[8,7,9,6,8,7,9,8,7].slice(0,7).map(() => '')}
               <div class="flex gap-0.5">
                 <div class="w-2 h-4 rounded-sm bg-brand-600 opacity-90"></div>
                 <div class="w-2 h-5 rounded-sm bg-brand-500 opacity-90"></div>
@@ -276,8 +263,8 @@
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
 
       <div class="metric-card rounded-2xl p-6 text-center">
-        <div class="font-display font-bold text-white mb-1" style="font-size: 2.5rem; line-height: 1.1;">5<span class="gradient-text">×</span></div>
-        <div class="text-slate-400 text-sm font-medium">Faster Time-to-Hire</div>
+        <div class="font-display font-bold text-white mb-1" style="font-size: 2.5rem; line-height: 1.1;">Much<span class="gradient-text"> Faster</span></div>
+        <div class="text-slate-400 text-sm font-medium">Time-to-Hire</div>
         <div class="text-slate-600 text-xs mt-1">vs. traditional panels</div>
       </div>
 
@@ -560,121 +547,19 @@
 
 
 <!-- ============================================================
-     PRICING
+     EARLY ACCESS
      ============================================================ -->
-<section id="pricing" class="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
+<section id="early-access" class="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
   <div class="gradient-divider mb-20"></div>
   <div class="max-w-7xl mx-auto">
 
-    <div class="text-center mb-16">
-      <p class="section-label mb-4">Pricing</p>
-      <h2 class="font-display font-bold text-white mb-4" style="font-size: clamp(1.8rem, 3.5vw, 2.8rem); line-height: 1.15;">
-        Built for teams that hire at scale.
-      </h2>
-      <p class="text-slate-400 max-w-lg mx-auto">Transparent, usage-based pricing. No surprise overages, no per-seat lock-in for large teams. Start with a free trial — no credit card required.</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-16">
-
-      <!-- Starter -->
-      <div class="pricing-card rounded-2xl p-6">
-        <div class="mb-6">
-          <div class="text-slate-400 text-sm font-semibold mb-1 uppercase tracking-wider">Starter</div>
-          <div class="font-display font-bold text-white text-4xl mb-1">4,999<span class="text-slate-500 font-normal text-lg"> ETB/mo</span></div>
-          <div class="text-slate-500 text-sm">Up to 50 interviews/month</div>
-        </div>
-        <ul class="space-y-3 mb-8">
-          <li class="flex items-start gap-2 text-sm text-slate-400">
-            <span class="text-brand-400 mt-0.5 flex-shrink-0">✓</span> 3D avatar interviews
-          </li>
-          <li class="flex items-start gap-2 text-sm text-slate-400">
-            <span class="text-brand-400 mt-0.5 flex-shrink-0">✓</span> CV-driven question generation
-          </li>
-          <li class="flex items-start gap-2 text-sm text-slate-400">
-            <span class="text-brand-400 mt-0.5 flex-shrink-0">✓</span> AI scorecards & transcripts
-          </li>
-          <li class="flex items-start gap-2 text-sm text-slate-400">
-            <span class="text-brand-400 mt-0.5 flex-shrink-0">✓</span> 1 ATS integration
-          </li>
-          <li class="flex items-start gap-2 text-sm text-slate-500">
-            <span class="text-slate-700 mt-0.5 flex-shrink-0">✗</span> Live proctoring
-          </li>
-        </ul>
-        <button class="w-full btn-secondary py-3 rounded-xl text-sm" onclick="handlePricingCTA('starter')">
-          Start Free Trial
-        </button>
-      </div>
-
-      <!-- Growth (Featured) -->
-      <div class="pricing-card featured rounded-2xl p-6 relative">
-        <div class="absolute -top-3 left-1/2 -translate-x-1/2">
-          <span class="tag px-4 py-1.5 rounded-full text-xs font-bold" style="background: linear-gradient(135deg, #7c3aed, #6d28d9); border-color: rgba(139,92,246,0.6); color: white;">Most Popular</span>
-        </div>
-        <div class="mb-6">
-          <div class="text-brand-400 text-sm font-semibold mb-1 uppercase tracking-wider">Growth</div>
-          <div class="font-display font-bold text-white text-4xl mb-1">14,999<span class="text-slate-400 font-normal text-lg"> ETB/mo</span></div>
-          <div class="text-slate-400 text-sm">Up to 200 interviews/month</div>
-        </div>
-        <ul class="space-y-3 mb-8">
-          <li class="flex items-start gap-2 text-sm text-slate-300">
-            <span class="text-brand-400 mt-0.5 flex-shrink-0">✓</span> Everything in Starter
-          </li>
-          <li class="flex items-start gap-2 text-sm text-slate-300">
-            <span class="text-brand-400 mt-0.5 flex-shrink-0">✓</span> Live proctoring & anti-cheat
-          </li>
-          <li class="flex items-start gap-2 text-sm text-slate-300">
-            <span class="text-brand-400 mt-0.5 flex-shrink-0">✓</span> 10 ATS integrations
-          </li>
-          <li class="flex items-start gap-2 text-sm text-slate-300">
-            <span class="text-brand-400 mt-0.5 flex-shrink-0">✓</span> Multilingual (50+ languages)
-          </li>
-          <li class="flex items-start gap-2 text-sm text-slate-300">
-            <span class="text-brand-400 mt-0.5 flex-shrink-0">✓</span> Bias-reduction grading
-          </li>
-        </ul>
-        <button class="w-full btn-primary py-3 rounded-xl text-sm" onclick="handlePricingCTA('growth')">
-          Start Free Trial
-        </button>
-      </div>
-
-      <!-- Enterprise -->
-      <div class="pricing-card rounded-2xl p-6">
-        <div class="mb-6">
-          <div class="text-slate-400 text-sm font-semibold mb-1 uppercase tracking-wider">Enterprise</div>
-          <div class="font-display font-bold text-white text-4xl mb-1">Custom</div>
-          <div class="text-slate-500 text-sm">Unlimited interviews</div>
-        </div>
-        <ul class="space-y-3 mb-8">
-          <li class="flex items-start gap-2 text-sm text-slate-400">
-            <span class="text-brand-400 mt-0.5 flex-shrink-0">✓</span> Everything in Growth
-          </li>
-          <li class="flex items-start gap-2 text-sm text-slate-400">
-            <span class="text-brand-400 mt-0.5 flex-shrink-0">✓</span> Custom avatar branding
-          </li>
-          <li class="flex items-start gap-2 text-sm text-slate-400">
-            <span class="text-brand-400 mt-0.5 flex-shrink-0">✓</span> SSO & SAML 2.0
-          </li>
-          <li class="flex items-start gap-2 text-sm text-slate-400">
-            <span class="text-brand-400 mt-0.5 flex-shrink-0">✓</span> Dedicated CSM & SLA
-          </li>
-          <li class="flex items-start gap-2 text-sm text-slate-400">
-            <span class="text-brand-400 mt-0.5 flex-shrink-0">✓</span> On-premise deployment option
-          </li>
-        </ul>
-        <button class="w-full btn-secondary py-3 rounded-xl text-sm" onclick="handlePricingCTA('enterprise')">
-          Talk to Sales
-        </button>
-      </div>
-
-    </div>
-
-    <!-- Enterprise lead capture -->
+    <!-- Early Access lead capture -->
     <div class="rounded-2xl p-8 md:p-12 text-center relative overflow-hidden" style="background: linear-gradient(145deg, #1e1b4b, #141328); border: 1px solid rgba(139,92,246,0.35);">
       <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at 50% 0%, rgba(109,40,217,0.2) 0%, transparent 60%);"></div>
       <div class="relative z-10">
-        <p class="section-label mb-3">Enterprise Waitlist</p>
-        <h3 class="font-display font-bold text-white text-2xl md:text-3xl mb-3">Lock in Founding Enterprise Pricing.</h3>
-        <p class="text-slate-400 mb-8 max-w-lg mx-auto">Join our exclusive enterprise waitlist. Founding customers receive 40% off enterprise pricing and priority onboarding — locked in for life.</p>
+        <p class="section-label mb-3">Early Access</p>
+        <h3 class="font-display font-bold text-white text-2xl md:text-3xl mb-3">Join the Waitlist.</h3>
+        <p class="text-slate-400 mb-8 max-w-lg mx-auto">Join our exclusive waitlist for early access to Tenkir AI. Get priority onboarding and be the first to experience the future of hiring.</p>
         <div class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
           <input
             type="email"
@@ -733,8 +618,8 @@
         <ul class="space-y-2.5">
           <li><a href="#features" class="text-slate-500 text-sm hover:text-brand-400 transition-colors">Features</a></li>
           <li><a href="#integrations" class="text-slate-500 text-sm hover:text-brand-400 transition-colors">Integrations</a></li>
-          <li><a href="#pricing" class="text-slate-500 text-sm hover:text-brand-400 transition-colors">Pricing</a></li>
           <li><a href="#how-it-works" class="text-slate-500 text-sm hover:text-brand-400 transition-colors">How It Works</a></li>
+          <li><a href="admin.html" class="text-slate-500 text-sm hover:text-brand-400 transition-colors">Admin View</a></li>
           <li><a href="#" class="text-slate-500 text-sm hover:text-brand-400 transition-colors">Changelog</a></li>
         </ul>
       </div>

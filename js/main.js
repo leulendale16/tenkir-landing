@@ -22,27 +22,9 @@ function toggleMobileMenu() {
 
 // ── CTA Handlers ──────────────────────────────────────────────
 function handleBookDemo()  { window.openModal && window.openModal(); }
-function handleSignIn()    { window.location.href = APP_URL.signIn; }
-function handleFreeTrial() { window.location.href = APP_URL.signUp; }
-
-function handleWatchDemo() {
-  window.showToast('Loading Demo…', 'Interactive demo opening — one moment.');
-  setTimeout(function () {
-    window.showToast('Demo Ready', 'Your interactive preview session has begun.');
-  }, 1800);
-}
-
-function handlePricingCTA(tier) {
-  if (tier === 'enterprise') {
-    window.openModal && window.openModal();
-  } else {
-    var label = tier === 'starter' ? 'Starter' : 'Growth';
-    window.showToast('Starting Free Trial', 'Setting up your ' + label + ' account…');
-  }
-}
 
 function handleEmailSubmit() {
-  var input = document.getElementById('waitlist-email');
+  var input = document.getElementById('email-input');
   var confirmation = document.getElementById('submit-confirmation');
   if (!input) return;
 
@@ -52,12 +34,18 @@ function handleEmailSubmit() {
     return;
   }
 
+  var savedEmails = JSON.parse(localStorage.getItem('tenkir_waitlist') || '[]');
+  if (!savedEmails.includes(email)) {
+    savedEmails.push({ email: email, date: new Date().toISOString() });
+    localStorage.setItem('tenkir_waitlist', JSON.stringify(savedEmails));
+  }
+
   input.value = '';
   if (confirmation) {
     confirmation.classList.remove('hidden');
     setTimeout(function () { confirmation.classList.add('hidden'); }, 5000);
   }
-  window.showToast("You're on the list!", 'Founding enterprise pricing locked in for you.');
+  window.showToast("You're on the list!", 'We will be in touch shortly.');
 }
 
 // ── Smooth Scroll (offset for fixed nav) ─────────────────────
@@ -119,8 +107,4 @@ document.addEventListener('DOMContentLoaded', function () {
 // ── Expose globals ────────────────────────────────────────────
 window.toggleMobileMenu  = toggleMobileMenu;
 window.handleBookDemo    = handleBookDemo;
-window.handleSignIn      = handleSignIn;
-window.handleFreeTrial   = handleFreeTrial;
-window.handleWatchDemo   = handleWatchDemo;
-window.handlePricingCTA  = handlePricingCTA;
 window.handleEmailSubmit = handleEmailSubmit;
