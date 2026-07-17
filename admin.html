@@ -29,6 +29,7 @@
           <input type="password" id="login-password" placeholder="Password" required class="input-field w-full px-4 py-3 rounded-xl text-sm" />
         </div>
         <button type="submit" class="btn-primary w-full py-3 rounded-xl text-sm font-semibold">Log In</button>
+        <button type="button" onclick="showWaitlist(true)" class="w-full py-3 mt-2 rounded-xl text-sm font-semibold border border-white/20 text-slate-300 hover:bg-white/5 transition-colors">Bypass Login (View Local Data)</button>
       </form>
       <p id="login-error" class="text-red-400 text-sm mt-4 hidden"></p>
     </div>
@@ -60,7 +61,14 @@
   <script>
     const supabaseUrl = 'https://ganfmihjqgadexmlleio.supabase.co';
     const supabaseKey = 'sb_publishable_O3RFdjxDq5oIy18VCI5_Sw_IPgcdc-w';
-    const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+    let supabase = null;
+    try {
+      if (window.supabase) {
+        supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+      }
+    } catch (e) {
+      console.error("Failed to initialize Supabase:", e);
+    }
 
     const loginSection = document.getElementById('login-section');
     const waitlistSection = document.getElementById('waitlist-section');
@@ -71,10 +79,21 @@
 
     // Check session on load
     async function checkSession() {
-      const { data: { session } } = await supabase.auth.getSession();
-      if (session) {
-        showWaitlist();
-      } else {
+      if (!supabase) {
+        loginSection.classList.remove('hidden');
+        waitlistSection.classList.add('hidden');
+        return;
+      }
+      try {
+        const { data: { session } } = await supabase.auth.getSession();
+        if (session) {
+          showWaitlist();
+        } else {
+          loginSection.classList.remove('hidden');
+          waitlistSection.classList.add('hidden');
+        }
+      } catch (e) {
+        console.error(e);
         loginSection.classList.remove('hidden');
         waitlistSection.classList.add('hidden');
       }
@@ -86,28 +105,46 @@
       const password = document.getElementById('login-password').value;
       
       loginError.classList.add('hidden');
-      const { data, error } = await supabase.auth.signInWithPassword({ email, password });
-      
-      if (error) {
-        loginError.textContent = error.message;
+      if (!supabase) {
+        loginError.textContent = "Database connection failed. Please use Bypass Login.";
         loginError.classList.remove('hidden');
-      } else {
-        showWaitlist();
+        return;
+      }
+
+      try {
+        const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+        
+        if (error) {
+          loginError.textContent = error.message;
+          loginError.classList.remove('hidden');
+        } else {
+          showWaitlist();
+        }
+      } catch (e) {
+        loginError.textContent = e.message;
+        loginError.classList.remove('hidden');
       }
     });
 
     async function handleLogout() {
-      await supabase.auth.signOut();
+      if (supabase) await supabase.auth.signOut();
       loginSection.classList.remove('hidden');
       waitlistSection.classList.add('hidden');
       loginForm.reset();
     }
 
-    async function showWaitlist() {
+    async function showWaitlist(forceLocal = false) {
       loginSection.classList.add('hidden');
       waitlistSection.classList.remove('hidden');
       waitlistBody.innerHTML = '<tr><td colspan="2" class="px-6 py-8 text-center text-slate-500">Loading waitlist data...</td></tr>';
       
+      if (forceLocal) {
+        fallbackNotice.classList.remove('hidden');
+        const localData = JSON.parse(localStorage.getItem('tenkir_waitlist') || '[]');
+        renderTable(localData.map(d => ({ email: d.email, created_at: d.date })));
+        return;
+      }
+
       // Try to fetch from Supabase
       const { data, error } = await supabase
         .from('waitlist')
